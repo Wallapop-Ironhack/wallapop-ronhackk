@@ -1,0 +1,21 @@
+
+ <h1 class="display-4 "> Products List</h1>
+ <div class="row row-cols-1 row-cols-md-3 g-4">
+  {{#each products as |product| }}
+    <div class="col">
+      <div class="card">
+        <div class= "">  
+       {{#if product.image}}
+          <img class="card-img-top mt-2" class="card text-center" src="{{product.image}}" />
+        {{/if}}
+        </div>
+        <div class="card-body text-center">
+          <h5>{{product.title}}</h5>
+          <h5>Price - {{product.price}}</h5>
+         
+          <a class="click" href="/products/{{product.id}}">Detail</a>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>

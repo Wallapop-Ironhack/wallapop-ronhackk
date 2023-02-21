@@ -1,0 +1,61 @@
+.formHome {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.inputHome[type="text"] {
+  background-color: #eadada;
+  border: none;
+  color: #b3b3b3;
+  font-size: 14px;
+  width: 80%;
+  padding: 10px;
+  border-radius: 24px;
+}
+
+.buttonHome {
+  background-color: #26bb98;
+  border: none;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 10px;
+  width: 40%;
+  border-radius: 24px;
+}
+
+h1 {
+  color: #26bb98;
+  text-align: center;
+  height: 300px;
+  font-size: 100px;
+}
+
+.click {
+  display: inline-block;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background-color: #26bb98;
+  border-radius: 6px;
+  outline: none;
+}
+.homeSelect {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 15vw;
+  object-fit: cover;
+}
+
+.tittleNav {
+    color: #26bb98;
+}

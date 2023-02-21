@@ -1,0 +1,31 @@
+<div class="position-absolute top-50 start-50 translate-middle">
+  <div>
+  <h2 class="display-1">Login</h2>
+  </div>
+  {{#if errors}}
+    <div class="alert alert-danger">
+      review form data
+    </div>
+  {{/if}}
+  <form action="/login" method="POST">
+    <div class="mb-2" style="width: 500px">
+      <label for="email" class="form-label">Email adress</label>
+      <input type="email" value="{{user.email}}" name="email" class="form-control {{#if errors.email}}is-invalid{{/if}}" id="email">
+      {{#if errors.email}}
+        <div class="invalid-feedback">
+          {{errors.email.message}}
+        </div>
+      {{/if}}
+    </div>
+    <div class="mb-3" style="width: 500px">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" value="{{user.password}}" name="password" class="form-control {{#if errors.password}}is-invalid{{/if}}" id="password">
+    {{#if errors.password}}
+        <div class="invalid-feedback">
+          {{errors.password.message}}
+        </div>
+      {{/if}}
+    </div>
+    <button type="submit" class="btn btn-primary btn-lg" class="border border-primary" style="background-color: #26BB98" >Login</button>
+  </form>
+</div>
