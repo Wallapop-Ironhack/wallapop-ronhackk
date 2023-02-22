@@ -1,6 +1,6 @@
 
- <h1 class="display-4 "> Products List</h1>
- <div class="row row-cols-1 row-cols-md-3 g-4">
+ <h1 class="display-4 mt-5 pt-5"> Products List</h1>
+ <div class="row row-cols-1 row-cols-md-3 g-4  border-color ">
   {{#each products as |product| }}
     <div class="col">
       <div class="card">
@@ -13,7 +13,7 @@
           <h5>{{product.title}}</h5>
           <h5>Price - {{product.price}}</h5>
          
-          <a class="click" href="/products/{{product.id}}">Detail</a>
+          <a  class="btn btn-outline-success" href="/products/{{product.id}}">Detail</a>
         </div>
       </div>
     </div>

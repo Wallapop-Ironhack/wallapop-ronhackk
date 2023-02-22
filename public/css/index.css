@@ -27,27 +27,18 @@
   border-radius: 24px;
 }
 
-h1 {
+.homeTittle {
   color: #26bb98;
   text-align: center;
   height: 300px;
   font-size: 100px;
+  margin-top: 100px;
 }
 
-.click {
-  display: inline-block;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  color: white;
-  background-color: #26bb98;
-  border-radius: 6px;
-  outline: none;
-}
 .homeSelect {
   display: flex;
   justify-content: space-between;
-  margin-top: 100px;
+  margin-top: 10px;
 }
 
 .card-img-top {
@@ -58,4 +49,24 @@ h1 {
 
 .tittleNav {
     color: #26bb98;
+}
+
+.homeSearch {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+  
+}
+
+.anchorHome {
+  text-decoration: none;
+  color:#26bb98; 
+}
+
+.tittleNav {
+  color:#26bb98; 
+}
+
+.navbuttonleft {
+  color:#26bb98; 
 }
