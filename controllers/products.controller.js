@@ -38,7 +38,13 @@ module.exports.doCreate = (req, res, next) => {
         .then((product) => {
             res.redirect("/products");
         })
-        .catch()
+        .catch((err) => {
+            if (err instanceof mongoose.Error.ValidationError) {
+              res.render("tweets/new", { errors: err.errors, tweet: req.body });
+            } else {
+              next(err);
+            }
+          });
 }
 
 module.exports.update = (req, res, next) => {
