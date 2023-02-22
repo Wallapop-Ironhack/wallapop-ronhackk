@@ -70,3 +70,7 @@
 .navbuttonleft {
   color:#26bb98; 
 }
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+  background-color: #26bb98 !important;
+}
