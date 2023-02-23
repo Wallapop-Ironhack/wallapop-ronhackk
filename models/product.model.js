@@ -27,7 +27,7 @@ const schemaProduct = new mongoose.Schema (
         category: {
             type: String,
             required: [true, "title is required"],
-            enum: ["fashion", "vehicle", "electronic"],
+            enum: ["fashion", "vehicle", "electronic", "music and books", "bikes", "phones", "homeware"],
 
         }
         
