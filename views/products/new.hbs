@@ -21,9 +21,20 @@
       <label for="description" class="form-label">Description</label>
       <input value="{{product.description}}" name="description" class="form-control" type="text" id="description">
     </div>
-    <div class="mb-3" style="width: 500px">
-      <label for="category" class="form-label">Category</label>
+    <div class="form-group mb-3" style="width: 500px">
+      <label for="category" class="form-label">Choose one category</label>
       <input value="{{product.category}}" name="category" class="form-control" type="text" id="Category">
+         <select multiple class="form-control" id="exampleFormControlSelect2">
+      <option>bikes</option>
+      <option>electronic</option>
+      <option>fashion</option>
+      <option>homeware</option>
+      <option>music and books</option>
+      <option>phones</option>
+      <option>vehicles</option>
+      
+
+    </select>
     </div>
     <button type="submit" class="btn btn-primary btn-lg" class="border border-primary" style="background-color: #26BB98">Create</button>
   </form>
