@@ -6,20 +6,25 @@
 </svg> Wallapop</a>
 <div class="navbar-toggler-left align-self-center" >
       
-    <div class="navbar navbar-expand-lg">
+     <div class="navbar navbar-expand-lg">
   <form class="form-inline" action="/products/new" method="GET">
     <button class="btn btn-success rounded-pill  pb-2 ps-3 pe-3" type="submit" >New Product</button>
-  </form>
-   <form class="form-inline" action="/users/new" method="GET">
+   <li class="nav-item dropdown" >
+    <a class="nav-link dropdown-toggle"  data-bs-toggle="dropdown" href="#" role="button"
+      aria-expanded="false"> <img class="btn btn-success rounded-pill "></a> <ul class="dropdown-menu mt-1" >
+     
+      <li><form class="form-inline" action="/users/new" method="GET">
     <button class="btn btn-outline-success my-2 my-sm-0 rounded-pill" type="submit" >Sign up</button>
-  </form>
-     <form class="form-inline" action="/login" method="GET">
+  </form></li>
+      <li> <form class="form-inline" action="/login" method="GET">
     <button class="btn btn-outline-success my-2 my-sm-0 rounded-pill" type="submit" >Login</button>
-  </form>
-   </form>
-     <form class="form-inline" action="/logout" method="POST">
+  </form></li>
+      <li> <form class="form-inline" action="/logout" method="POST">
     <button class="btn btn-outline-success my-2 my-sm-0 rounded-pill" type="submit" >Logout</button>
-  </form>
+  </form></li>
+      
+    </ul>
+  </li>
   </div>
     <span class="navbar-text">
        {{#if currentUser}}
