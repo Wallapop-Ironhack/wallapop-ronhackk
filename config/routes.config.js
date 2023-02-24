@@ -14,7 +14,7 @@ router.get("/category-search", common.search);
 router.get("/users/new", users.create);
 router.post("/users", users.doCreate);
 
-router.post('/user-profile/chat/:id',secure.isAuthenticated, chat.doCreate)
+
 
 router.get("/login", users.login);
 router.post("/login", users.doLogin);
@@ -31,6 +31,6 @@ router.get("/products/:id/update", secure.isAuthenticated, products.update);
 router.post("/products/:id", secure.isAuthenticated, products.doUpdate);
 router.post("/products/:id/delete", secure.isAuthenticated, products.delete);
 
-router.post('/user-profile/chat/:id',secure.isAuthenticated, chat.doCreate)
+//router.post('/user-profile/chat/:id',secure.isAuthenticated, chat.doCreate)
 
 module.exports = router;

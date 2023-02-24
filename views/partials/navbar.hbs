@@ -8,11 +8,16 @@
       
      <div class="navbar navbar-expand-lg">
   <form class="form-inline" action="/products/new" method="GET">
-    <button class="btn btn-success rounded-pill  pb-2 ps-3 pe-3" type="submit" >New Product</button>
+    <button class="btn btn-success rounded-pill  pb-2 ps-3 pe-3 mb-3" type="submit" >New Product</button>
    <li class="nav-item dropdown" >
-    <a class="nav-link dropdown-toggle"  data-bs-toggle="dropdown" href="#" role="button"
-      aria-expanded="false"> <img class="btn btn-success rounded-pill "></a> <ul class="dropdown-menu mt-1" >
-     
+    <a class="nav-link dropdown-toggle btn btn-outline-success my-2 my-sm-0 pt-1 pb-1 rounded-pill"  data-bs-toggle="dropdown"  <span class="navbar-text">
+       {{#if currentUser}}
+        You are: {{currentUser.name}}
+        {{else}}
+        Login/Sign in
+        {{/if}}
+    </span></a> 
+      <ul class="dropdown-menu mt-1" >
       <li><form class="form-inline" action="/users/new" method="GET">
     <button class="btn btn-outline-success my-2 my-sm-0 rounded-pill" type="submit" >Sign up</button>
   </form></li>
@@ -25,11 +30,5 @@
       
     </ul>
   </li>
-  </div>
-    <span class="navbar-text">
-       {{#if currentUser}}
-          Logged user: {{currentUser.email}}
-        {{/if}}
-    </span>
- </div>
+ 
 </nav>

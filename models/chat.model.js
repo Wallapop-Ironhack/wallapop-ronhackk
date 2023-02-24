@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+/*const mongoose = require("mongoose");
 const schemaChat = new mongoose.Schema (
     {
         users: [{
@@ -12,4 +12,4 @@ const schemaChat = new mongoose.Schema (
     },
     { timestamps: true }
 );
-module.exports = mongoose.model("Chat", schemaChat);
+module.exports = mongoose.model("Chat", schemaChat);*/
