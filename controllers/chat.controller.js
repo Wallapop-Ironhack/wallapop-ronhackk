@@ -1,4 +1,4 @@
-/*const Chat = require('../models/chat.model')
+const Chat = require('../models/chat.model')
 const Message = require('../models/message.model')
 module.exports.doCreate = (req, res, next) => {
     const newChat = new Chat({ users: [req.params.id, req.user.id]})
@@ -12,4 +12,4 @@ module.exports.doCreate = (req, res, next) => {
             }
         })
         .catch(next)
-}*/
+}

@@ -4,6 +4,7 @@ const common = require("../controllers/common.controller");
 const products = require("../controllers/products.controller");
 const users = require("../controllers/users.controller");
 const secure = require("../middlewares/secure.mid");
+const chat = require("../controllers/chat.controller");
 
 const router = express.Router();
 
