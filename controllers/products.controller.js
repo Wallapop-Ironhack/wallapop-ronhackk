@@ -40,7 +40,7 @@ module.exports.doCreate = (req, res, next) => {
         })
         .catch((err) => {
             if (err instanceof mongoose.Error.ValidationError) {
-              res.render("tweets/new", { errors: err.errors, tweet: req.body });
+              res.render("products/new", { errors: err.errors, tweet: req.body });
             } else {
               next(err);
             }
