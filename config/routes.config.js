@@ -5,6 +5,7 @@ const products = require("../controllers/products.controller");
 const users = require("../controllers/users.controller");
 const secure = require("../middlewares/secure.mid");
 const chat = require("../controllers/chat.controller");
+const messages = require("../controllers/messages.controller");
 
 const router = express.Router();
 
@@ -34,6 +35,8 @@ router.get("/products/:id/update", secure.isAuthenticated, products.update);
 router.post("/products/:id", secure.isAuthenticated, products.doUpdate);
 router.post("/products/:id/delete", secure.isAuthenticated, products.delete);
 
-//router.post('/user-profile/chat/:id',secure.isAuthenticated, chat.doCreate)
+router.get("/products/:id/users/:userId/chat", messages.list)
+router.post("/products/:id/users/:userId/chat", messages.doCreate)
+
 
 module.exports = router;
