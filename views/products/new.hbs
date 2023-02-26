@@ -3,7 +3,7 @@
   <form action="/products" method="POST">
     <div class="mb-3" style="width: 500px">
       <label for="image" class="form-label">Image</label>
-      <input value="{{product.image}}" name="image" type="text" class="form-control {{#if errors.image}}is-invalid{{/if}}" id="Image">
+      <input value="{{product.image}}" name="image" type="text" class="form-control {{#if errors.image}}is-invalid{{/if}}" id="Image" placeholder="https://">
     </div>
     <div class="mb-3" style="width: 500px">
       <label for="title" class="form-label">Title</label>
@@ -15,7 +15,7 @@
     </div>
     <div class="mb-3" style="width: 500px">
       <label for="price" class="form-label">Price</label>
-      <input value="{{product.price}}" name="price" class="form-control" type="text" id="Price">
+      <input value="{{product.price}}" name="price" class="form-control" type="text" id="Price" placeholder="0.00€">
     </div>
     <div class="mb-3" style="width: 500px">
       <label for="description" class="form-label">Description</label>
@@ -23,18 +23,14 @@
     </div>
     <div class="form-group mb-3" style="width: 500px">
       <label for="category" class="form-label">Choose one category</label>
-      <input value="{{product.category}}" name="category" class="form-control" type="text" id="Category">
-         <select multiple class="form-control" id="exampleFormControlSelect2">
-      <option>bikes</option>
-      <option>electronic</option>
-      <option>fashion</option>
-      <option>homeware</option>
-      <option>music and books</option>
-      <option>phones</option>
-      <option>vehicles</option>
-      
-
-    </select>
+      <input value="{{product.category}}" name="category" class="form-control" list="datalistOptions" type="text" id="Category" placeholder="Open this select menu">
+      <datalist id="datalistOptions">
+        <option value="electronic">
+        <option value="homeware">
+        <option value="music and books">
+        <option value="phones">
+        <option value="vehicles">
+      </datalist>
     </div>
     <button type="submit" class="btn btn-primary btn-lg" class="border border-primary" style="background-color: #26BB98">Create</button>
   </form>
