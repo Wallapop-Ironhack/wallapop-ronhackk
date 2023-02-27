@@ -6,13 +6,14 @@ module.exports.create = (req, res) => {
   res.render("users/new");
 }
 
-module.exports.doCreate = (req, res, next) => {
+/*module.exports.doCreate = (req, res, next) => {
   User.create(req.body)
     .then((user) => res.redirect("/login"))
     .catch(next)
-}
+} */
 
-/*   User.create(req.body)
+module.exports.doCreate = (req, res, next) => { 
+    User.create(req.body)
      .then(() => {
        res.redirect("/login");
      })
@@ -22,7 +23,8 @@ module.exports.doCreate = (req, res, next) => {
        } else {
          next(err);
        }
-     });   */
+     });  
+    }
 
 
 module.exports.login = (req, res) => {
@@ -52,4 +54,4 @@ module.exports.doLogin = (req, res, next) => {
 module.exports.logout = (req, res, next) => {
   req.session.destroy()
   res.redirect("/login");
-}
+};
