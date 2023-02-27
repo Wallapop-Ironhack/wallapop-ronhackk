@@ -60,8 +60,14 @@ module.exports.doUpdate = (req, res, next) => {
         .then((product) => {
             res.redirect("/products");
         })
-        .catch(next);
-}
+        .catch((error) => {
+            if (error instanceof mongoose.Error.ValidationError) {
+              res.render("products/update", { errors: error.errors, trip: req.body });
+            } else {
+              next(error);
+            }
+          })
+        }
 
 module.exports.delete = (req, res, next) => {
     Products.findById(req.params.id)
