@@ -5,25 +5,24 @@
   <path d="M7 5a4.5 4.5 0 0 1 4.473 4h.027a2.5 2.5 0 0 1 0 5H3a3 3 0 0 1-.247-5.99A4.502 4.502 0 0 1 7 5zm3.5 4.5a3.5 3.5 0 0 0-6.89-.873.5.5 0 0 1-.51.375A2 2 0 1 0 3 13h8.5a1.5 1.5 0 1 0-.376-2.953.5.5 0 0 1-.624-.492V9.5z"/>
 </svg> Wallapop</a>
 <div class="navbar-toggler-left align-self-center" >
-      
-    <div class="navbar navbar-expand-lg">
-       
-    <a class="btn btn-outline-success my-2 my-sm-0 rounded-pill" href="/products/new"> New Product</a>
-
-    <a class="btn btn-outline-success my-2 my-sm-0 rounded-pill" href="/users/new"> Sign up</a>
-     
-    <a class="btn btn-outline-success my-2 my-sm-0 rounded-pill" href="/login" >Login</a>
-  
-   <form class="form-inline" action="/logout" method="POST">
-    <button class="btn btn-outline-success my-2 my-sm-0 rounded-pill" type="submit" >Logout</button>
-</form>
-
-  </div>
-    <span class="navbar-text">
+          <a class="btn btn-outline-success my-2 my-sm-0 rounded-pill" href="/products/new"> New Product</a>
+    <li class="nav-item dropdown" >
+    <a class="nav-link dropdown-toggle btn btn-outline-success my-2 my-sm-0 pt-1 pb-1 rounded-pill"  data-bs-toggle="dropdown"  class="navbar-text">
        {{#if currentUser}}
-          Logged user: {{currentUser.email}}
+        You are: {{currentUser.name}}
+        {{else}}
+        Login/Sign up
         {{/if}}
-    </span>
- </div>
+    </a> 
+     <ul class="dropdown-menu mt-1" >
+  
+   <li> <a class="btn btn-outline-success my-2 my-sm-0 rounded-pill" href="/users/new"> Sign up</a></li>
+     
+   <li><a class="btn btn-outline-success my-2 my-sm-0 rounded-pill" href="/login" >Login</a></li> 
+  
+   <li><form class="form-inline" action="/logout" method="POST">
+    <button class="btn btn-outline-success my-2 my-sm-0 rounded-pill" type="submit" >Logout</button>
+</form></li>
+   </ul>
+  </li>
 </nav>
-
