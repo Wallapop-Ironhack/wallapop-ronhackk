@@ -15,6 +15,8 @@ const schema = new mongoose.Schema(
       type: String,
       required: [true, "email is required"],
       match: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
+      lowercase: true,
+      trim: true
     },
     password: {
       type: String,
