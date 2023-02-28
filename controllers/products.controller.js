@@ -40,7 +40,7 @@ module.exports.doCreate = (req, res, next) => {
         })
         .catch((err) => {
             if (err instanceof mongoose.Error.ValidationError) {
-              res.render("products/new", { errors: err.errors, tweet: req.body });
+              res.render("products/new", { errors: err.errors, product: req.body });
             } else {
               next(err);
             }
@@ -62,7 +62,7 @@ module.exports.doUpdate = (req, res, next) => {
         })
         .catch((error) => {
             if (error instanceof mongoose.Error.ValidationError) {
-              res.render("products/update", { errors: error.errors, trip: req.body });
+              res.render("products/update", { errors: error.errors, product: req.body });
             } else {
               next(error);
             }
