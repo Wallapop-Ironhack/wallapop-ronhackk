@@ -33,6 +33,12 @@ module.exports.create = (req, res, next) => {
 };
 
 module.exports.doCreate = (req, res, next) => {
+
+    console.log(req.file);
+    
+    if (req.file) {
+        req.body.image = req.file.path;
+    }
     req.body.user = req.user.id
     Products.create(req.body)
         .then((product) => {

@@ -13,7 +13,7 @@ module.exports.checkRole = (role) => {
       if (req.user?.role === role) {
         next()
       } else {
-        res.redirect('/')
+        next(createError(403, 'Forbidden'))
       }
     }
   }

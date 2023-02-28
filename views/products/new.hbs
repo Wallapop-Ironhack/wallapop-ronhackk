@@ -7,13 +7,13 @@
       <div class="card-body">
         {{#if errors}}<div class="alert alert-danger">Review form data</div>{{/if}}
         
-        <form action="/products" method="POST">
+        <form action="/products" method="POST" enctype="multipart/form-data">
         
-          <div class="input-group mb-1">
-            <span class="input-group-text"><i class="fa fa-image fa-fw"></i></span>
-             <input value="{{product.image}}" name="image" type="text" class="form-control {{#if errors.image}}is-invalid{{/if}}" id="Image" placeholder="https:// image link">
-          </div>
-        
+        <div class="input-group mb-3">
+    <label class="input-group-text" for="image"><i class="fa fa-picture-o"></i></label>
+    <input type="file" name="image" class="form-control {{#if errors.image}}is-invalid{{/if}}" id="image">
+  </div>
+
           <div class="input-group mb-1">
             <span class="input-group-text"><i class="fa fa-comment fa-fw"></i></span>
             <input value="{{product.title}}" name="title" class="form-control" type="text"   placeholder= "Title">

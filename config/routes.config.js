@@ -1,5 +1,6 @@
 const express = require("express");
 
+const multer = require('../config/multer.config');
 const common = require("../controllers/common.controller");
 const products = require("../controllers/products.controller");
 const users = require("../controllers/users.controller");
@@ -28,7 +29,7 @@ router.post ("/logout", users.logout)
 router.get("/products", products.list);
 
 router.get("/products/new", secure.isAuthenticated, products.create);
-router.post("/products", secure.isAuthenticated, products.doCreate);
+router.post("/products", secure.isAuthenticated, multer.single('image'), products.doCreate);
 
 router.get("/products/:id", products.detail);
 router.get("/products/:id/update",secure.isAuthenticated, products.update);
