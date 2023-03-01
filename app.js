@@ -24,6 +24,7 @@ app.use(loadSessionUser);
 
 app.use((req, res, next) => {
   res.locals.currentPath = req.path;
+  res.locals.googleApiKey = process.env.GOOGLE_API_KEY;
   next();
 });
 

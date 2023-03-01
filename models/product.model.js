@@ -29,11 +29,28 @@ const schemaProduct = new mongoose.Schema (
             required: [true, "title is required"],
             enum: ["fashion", "vehicle", "electronic", "music and books", "bikes", "phones", "homeware"],
 
-        }
+        },
+
+        /*likes: { 
+            type: Number,
+            default: 0 
+        },*/
         
+        address: String,
+        location: {
+          type: {
+            type: String,
+            enum: ['Point'],
+          },
+          coordinates: {
+            type: [Number], 
+          }
+        }
     },
 
     { timestamps: true }
 );
+
+schemaProduct.index({ location: '2dsphere' });
 
 module.exports = mongoose.model("Product", schemaProduct);

@@ -35,14 +35,24 @@ module.exports.create = (req, res, next) => {
 
 module.exports.doCreate = (req, res, next) => {
 
-    console.log(req.file);
+    const { lat, lng } = req.body;
+  
+    const product = req.body;
+    product.user = req.user.id;
 
     if (req.file) {
-        req.body.image = req.file.path;
+        product.image = req.file.path;
     }
-    req.body.user = req.user.id
-    Products.create(req.body)
-        .then((product) => {
+   
+    if (lat && lng) {
+        product.location = {
+          type: 'Point',
+          coordinates: [lng, lat]
+        }
+    }
+
+    Products.create(product)
+        .then(() => {
             res.redirect("/products");
         })
         .catch((err) => {
@@ -51,8 +61,9 @@ module.exports.doCreate = (req, res, next) => {
             } else {
               next(err);
             }
-          });
-}
+          }); 
+        }
+
 
 module.exports.update = (req, res, next) => {
     Products.findById(req.params.id)
