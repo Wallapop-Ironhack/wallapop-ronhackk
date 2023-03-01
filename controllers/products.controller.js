@@ -15,6 +15,7 @@ module.exports.list = (req, res, next) => {
 
     Products.find(criteria)
         .populate('user')
+        .sort({ createdAt: req.query.sort || "desc" })
         .then((products) => {
             res.render("products/list", { products });
         })
@@ -35,7 +36,7 @@ module.exports.create = (req, res, next) => {
 module.exports.doCreate = (req, res, next) => {
 
     console.log(req.file);
-    
+
     if (req.file) {
         req.body.image = req.file.path;
     }
