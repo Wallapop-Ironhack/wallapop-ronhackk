@@ -7,7 +7,6 @@
         {{#if errors}}<div class="alert alert-danger">Review form data</div>{{/if}}
         
         <form action="/users" method="POST">
-        
           <div class="input-group mb-1">
             <span class="input-group-text"><i class="fa fa-user fa-fw"></i></span>
             <input type="text" value="{{user.name}}" name="name" class="form-control {{#if errors.name}}is-invalid{{/if}}"

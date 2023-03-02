@@ -17,6 +17,7 @@ const schemaProduct = new mongoose.Schema(
     title: {
       type: String,
       required: [true, "title is required"],
+      lowercase: true,
     },
 
     description: {

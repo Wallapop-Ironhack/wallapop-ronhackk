@@ -1,48 +1,53 @@
- <div>
- <h1 class="display-4 mt-5 pt-5"> Products List</h1>
-    <a href="/"  class="btn btn-outline-success mb-3 align-right">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
-      <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
-      </svg>
-       Go back</a>
- </div>
+<div>
+  <h1 class="display-4 mt-5 pt-5"> Products List</h1>
+  <a href="/" class="btn btn-outline-success mb-3 align-right">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left"
+      viewBox="0 0 16 16">
+      <path fill-rule="evenodd"
+        d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+    </svg>
+    Go back</a>
+</div>
+
 <form action="/products" method="get">
-    <div class="input-group mb-5">
-        <span class="input-group-text"><i class="fa fa-tag"></i></span>
-        <input type="text" name="search" class="form-control" placeholder="Search" value="{{query.search}}" >
-        <span class="input-group-text"><i class="fa fa-globe"></i></span>
-        <input type="text"  name="address" class="form-control g-places-finder " placeholder="Enter location" value="{{query.address}}">
-        <button class="btn btn-outline-success" type="submit" ><i class="fa fa-search"></i></button>
-       </form>
-         <li class="navbar-toggler" >
-    <a class= "btn btn-outline-success my-2 my-sm-0 rounded-pill"  data-bs-toggle="dropdown"  class="navbar-text">
-     Order by
-    </a> 
-     <ul class="dropdown-menu mt-1" >
-      <li><a class="btn btn-outline-success my-2 my-sm-0 rounded-pill" href="/products?sort=desc" >Newest first</a></li> 
-      <li> <a class="btn btn-outline-success my-2 my-sm-0 rounded-pill" href="/products?sort=asc" > Oldest first</a></li>
-</li>
-    </div>
+  <div class="input-group mb-5">
+    <span class="input-group-text"><i class="fa fa-tag"></i></span>
+    <input type="text" name="search" class="form-control" placeholder="Search" value="{{query.search}}">
+    <span class="input-group-text"><i class="fa fa-globe"></i></span>
+    <input type="text" name="address" class="form-control g-places-finder " placeholder="Enter location"
+      value="{{query.address}}">
+    <button class="btn btn-outline-success" type="submit"><i class="fa fa-search"></i></button>
     <input type="hidden" name="lat" value="{{query.lat}}" />
     <input type="hidden" name="lng" value="{{query.lng}}" />
+</form>
+<li class="navbar-toggler">
+  <a class="btn btn-outline-success my-2 my-sm-0 rounded-pill" data-bs-toggle="dropdown" class="navbar-text">
+    Order by
+  </a>
+  <ul class="dropdown-menu mt-1">
+    <li><a class="btn btn-outline-success my-2 my-sm-0 rounded-pill" href="/products?sort=desc">Newest first</a></li>
+    <li> <a class="btn btn-outline-success my-2 my-sm-0 rounded-pill" href="/products?sort=asc"> Oldest first</a></li>
+</li>
+</div>
 
- <div class="row row-cols-1 row-cols-md-3 g-4  border-color ">
+
+<div class="row row-cols-1 row-cols-md-3 g-4  border-color ">
   {{#each products as |product| }}
-    <div class="col">
-      <div class="card card border-success">
-        <small class="card-text d-block mb-2">Posted:{{date product.createdAt}}</small>
-        <div class= "">  
-       {{#if product.image}}
-          <img class="card-img-top mt-2" class="card text-center" src="{{product.image}}" />
+  <div class="col">
+    <div class="card card border-success">
+      <small class="card-text d-block mb-2">Posted:{{date product.createdAt}}</small>
+      <div class="">
+        {{#if product.image}}
+        <img class="card-img-top mt-2" class="card text-center" src="{{product.image}}" />
         {{/if}}
-        </div>
-        <div class="card-body text-center">
-          <h5>{{product.title}}</h5>
-          <h5>Price - {{product.price}}</h5>
-         
-          <a  class="btn btn-outline-success" href="/products/{{product.id}}">Detail</a>
-        </div>
+      </div>
+      <div class="card-body text-center">
+        <h5>{{product.title}}</h5>
+        <h5>Price - {{product.price}}</h5>
+
+        <a class="btn btn-outline-success" href="/products/{{product.id}}">Detail</a>
       </div>
     </div>
+  </div>
   {{/each}}
 </div>

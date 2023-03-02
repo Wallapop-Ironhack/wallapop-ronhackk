@@ -14,9 +14,7 @@ module.exports.list = (req, res, next) => {
     criterial.title = new RegExp(search);
   }
 
-  if (search) {
-    criterial.description = new RegExp(search);
-  }
+  
 
 
 
