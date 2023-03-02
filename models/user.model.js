@@ -7,9 +7,9 @@ const ADMIN_USERS = (process.env.ADMIN_USERS || 'admin@example.org')
 
 const schema = new mongoose.Schema(
   {
-    name: { 
-      type: String, 
-      equired: [true, "name is required"] 
+    name: {
+      type: String,
+      equired: [true, "name is required"]
     },
     email: {
       type: String,
