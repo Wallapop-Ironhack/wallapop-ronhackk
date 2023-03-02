@@ -14,7 +14,17 @@
        switch order down</a>
    </div>
 
-
+<form action="/products" method="get">
+    <div class="input-group mb-3">
+        <span class="input-group-text"><i class="fa fa-tag"></i></span>
+        <input type="text" name="search" class="form-control" placeholder="Search" value="{{query.search}}" >
+        <span class="input-group-text"><i class="fa fa-globe"></i></span>
+        <input type="text"  name="address" class="form-control g-places-finder " placeholder="Enter location" value="{{query.address}}">
+        <button class="btn btn-outline-primary" type="submit" ><i class="fa fa-search"></i></button>
+    </div>
+    <input type="hidden" name="lat" value="{{query.lat}}" />
+    <input type="hidden" name="lng" value="{{query.lng}}" />
+</form>
    
     <a href="/"  class="btn btn-outline-success">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">

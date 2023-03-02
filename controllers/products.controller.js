@@ -3,17 +3,30 @@ const mongoose = require("mongoose");
 const User = require("../models/user.model");
 
 module.exports.list = (req, res, next) => {
-    const criteria = {};
+  const { lat, lng, search, user } = req.query;
+  const criterial = {};
 
-    if (req.query.user) {
-        criteria.user = req.query.user;
+  if (user) {
+    criterial.user = user;
+  }
+
+  if (search) {
+    criterial.message = new RegExp(search);
+  }
+
+  if (lat && lng ) {
+    criterial.location = {
+      $near: {
+        $geometry: {
+          type: "Point",
+          coordinates: [lng, lat]
+        },
+        $maxDistance: 100000
+     }
     }
+  }
 
-    if (req.query.search) {
-        criteria.message = new RegExp(req.query.search);
-    }
-
-    Products.find(criteria)
+    Products.find(criterial)
         .populate('user')
         .sort({ createdAt: req.query.sort || "desc" })
         .then((products) => {
