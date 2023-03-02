@@ -1,13 +1,18 @@
  <div>
  <h1 class="display-4 mt-5 pt-5"> Products List</h1>
+    <a href="/"  class="btn btn-outline-success mb-3 align-right">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+      </svg>
+       Go back</a>
  </div>
 <form action="/products" method="get">
-    <div class="input-group mb-3">
+    <div class="input-group mb-5">
         <span class="input-group-text"><i class="fa fa-tag"></i></span>
         <input type="text" name="search" class="form-control" placeholder="Search" value="{{query.search}}" >
         <span class="input-group-text"><i class="fa fa-globe"></i></span>
         <input type="text"  name="address" class="form-control g-places-finder " placeholder="Enter location" value="{{query.address}}">
-        <button class="btn btn-outline-primary" type="submit" ><i class="fa fa-search"></i></button>
+        <button class="btn btn-outline-success" type="submit" ><i class="fa fa-search"></i></button>
          <li class="navbar-toggler" >
     <a class= "btn btn-outline-success my-2 my-sm-0 rounded-pill"  data-bs-toggle="dropdown"  class="navbar-text">
      Order by
@@ -19,14 +24,6 @@
     </div>
     <input type="hidden" name="lat" value="{{query.lat}}" />
     <input type="hidden" name="lng" value="{{query.lng}}" />
-</form>
-   <div>
-    <a href="/"  class="btn btn-outline-success">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
-      <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
-      </svg>
-       Go back</a>
-   </div>
 
  <div class="row row-cols-1 row-cols-md-3 g-4  border-color ">
   {{#each products as |product| }}
