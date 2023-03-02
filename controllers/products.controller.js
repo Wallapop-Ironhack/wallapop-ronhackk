@@ -11,7 +11,19 @@ module.exports.list = (req, res, next) => {
   }
 
   if (search) {
-    criterial.message = new RegExp(search);
+    criterial.title = new RegExp(search);
+  }
+
+  if (search) {
+    criterial.description = new RegExp(search);
+  }
+
+  if (search) {
+    criterial.price = new RegExp(search);
+  }
+
+  if (search) {
+    criterial.category = new RegExp(search);
   }
 
   if (lat && lng ) {
