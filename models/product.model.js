@@ -32,10 +32,10 @@ const schemaProduct = new mongoose.Schema(
 
     },
 
-    /*likes: { 
+    likes: { 
         type: Number,
         default: 0 
-    },*/
+    },
 
     address: String,
     location: {
