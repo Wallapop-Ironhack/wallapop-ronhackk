@@ -10,7 +10,7 @@
 .inputHome[type="text"] {
   background-color: #eadada;
   border: none;
-  color: #e7e4e4;
+  color: #26bb98;
   font-size: 20px;
   width: 80%;
   padding: 10px;
@@ -60,7 +60,6 @@
 .anchorHome {
   text-decoration: none;
   color:#26bb98; 
-  
 }
 
 .tittleNav {
