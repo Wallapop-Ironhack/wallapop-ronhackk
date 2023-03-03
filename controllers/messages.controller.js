@@ -1,24 +1,28 @@
 const Message = require("../models/message.model")
-// GET /products/:id/users/:ûserId/chat
+// GET /users/:id/chat
 module.exports.list = (req, res, next) => {
-  Message.find({
-    product: req.params.id,
-    user: req.params.userId
-  })
+    Message.find({
+        $or: [
+            { from: req.user._id, to: req.params.id },
+            { to: req.user._id, from: req.params.id }
+        ]
+    })
+    .populate('from')
+    .populate('to')
     .then((messages) => {
-      res.render('messages/chat', { messages })
+        res.render('messages/chat', {
+            messages,
+            to: req.params.id
+        })
     })
     .catch(next)
 }
 module.exports.doCreate = (req, res, next) => {
-  Message.create({
-    product: req.params.id,
-    user: req.params.userId,
-    message: req.body.message,
-    author: req.user.id,
-  })
-    .then(message => {
-      res.redirect(`/products/${message.product}/users/${message.user}/chat`)
+    Message.create({
+        from: req.user.id,
+        to: req.params.id,
+        message: req.body.message
+    }).then(message => {
+        res.redirect(`/users/${req.params.id}/chat`)
     })
-    .catch(next)
 }

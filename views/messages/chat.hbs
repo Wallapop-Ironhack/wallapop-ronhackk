@@ -1,12 +1,18 @@
 <div class="mt-5 pt-5">
-  {{#each messages as |message|}}
-  <li>{{message.message}}</li>
-  {{/each}}
-  <form action="/products/{{product.id}}/users/{{author.id}}/chat" method="POST">
-    <label name="message" id="message" type="text" class="label"></label>
-    <input value="{{message.message}}" name="message" class="form-control" type="text" id="message"
-      placeholder="Your Message Here">
-    <br>
-    <button type="submit" id="submit" class="btn btn-success">Send</button>
-  </form>
+    <ul>
+        {{#each messages as |message|}}
+            <li>
+                product: {{message.product.title}}
+                from: {{message.from.name}}
+                to: {{message.to.name}}
+                message: {{message.message}}
+            </li>
+        {{/each}}
+    </ul>
+    <form  action="/users/{{to}}/chat" method="POST">
+        <label name="message" id="message" type="text" class="label"></label>
+        <input value="{{message.message}}" name="message" class="form-control" type="text" id="message" placeholder="Your Message Here">
+        <br>
+        <button type="submit" id="submit" class="btn btn-success">Send</button>
+    </form>
 </div>

@@ -5,7 +5,7 @@ const common = require("../controllers/common.controller");
 const products = require("../controllers/products.controller");
 const users = require("../controllers/users.controller");
 const secure = require("../middlewares/secure.mid");
-const chat = require("../controllers/chat.controller");
+const buzon = require("../controllers/buzon.controller");
 const messages = require("../controllers/messages.controller");
 
 const router = express.Router();
@@ -36,8 +36,8 @@ router.get("/products/:id/update",secure.isAuthenticated, products.update);
 router.post("/products/:id", secure.isAuthenticated,  products.doUpdate);
 router.post("/products/:id/delete", secure.isAuthenticated, products.delete);
 
-router.get("/products/:id/users/:userId/chat", messages.list)
-router.post("/products/:id/users/:userId/chat", messages.doCreate)
-
+router.get("/users/:id/chat", messages.list)
+router.post("/users/:id/chat", messages.doCreate)
+router.get("/messages/buzon", buzon.list)
 
 module.exports = router;

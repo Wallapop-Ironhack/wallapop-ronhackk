@@ -1,20 +1,22 @@
 const mongoose = require("mongoose");
-const schemaMessage = new mongoose.Schema(
-  {
-    message: { type: String },
-    product: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Product'
+const schemaMessage = new mongoose.Schema (
+    {
+        message:{
+            type: String
+        },
+        from: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User'
+       },
+        to: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User'
+        },
+        // product: {
+        //     type: mongoose.Schema.Types.ObjectId,
+        //     ref: 'Product'
+        // }
     },
-    user: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'User'
-    },
-    author: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'User'
-    }
-  },
-  { timestamps: true }
+    { timestamps: true }
 );
 module.exports = mongoose.model("Message", schemaMessage);

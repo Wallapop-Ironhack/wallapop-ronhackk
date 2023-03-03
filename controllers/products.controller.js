@@ -15,9 +15,6 @@ module.exports.list = (req, res, next) => {
   }
 
   
-
-
-
   if (lat && lng) {
     criterial.location = {
       $near: {
