@@ -18,6 +18,15 @@ const schema = new mongoose.Schema(
       lowercase: true,
       trim: true
     },
+    address: {
+      type: String,
+    },
+    telephone: {
+      type: String,
+    },
+    age: {
+      type: String,
+    },
     password: {
       type: String,
       required: [true, "password is required"],

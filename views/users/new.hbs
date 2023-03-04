@@ -1,11 +1,9 @@
 <div class="row justify-content-center mt-5 pt-5">
   <div class="col-12 col-md-4">
     <h1 class="mb-3">Register</h1>
-
     <div class="card">
       <div class="card-body">
         {{#if errors}}<div class="alert alert-danger">Review form data</div>{{/if}}
-        
         <form action="/users" method="POST">
           <div class="input-group mb-1">
             <span class="input-group-text"><i class="fa fa-user fa-fw"></i></span>
@@ -13,21 +11,33 @@
               placeholder="User name...">
             {{#if errors.name}}<div class="invalid-feedback">{{errors.name}}</div>{{/if}}
           </div>
-        
           <div class="input-group mb-1">
             <span class="input-group-text"><i class="fa fa-envelope fa-fw"></i></span>
             <input type="email" value="{{user.email}}" name="email" class="form-control {{#if errors.email}}is-invalid{{/if}}"
               placeholder="user@example.org">
             {{#if errors.email}}<div class="invalid-feedback">{{errors.email}}</div>{{/if}}
           </div>
-        
+          <div class="input-group mb-1">
+            <span class="input-group-text"><i class="fa fa-envelope fa-fw"></i></span>
+            <input type="address" value="{{user.address}}" name="address" class="form-control"
+              placeholder="address">
+          </div>
+           <div class="input-group mb-1">
+            <span class="input-group-text"><i class="fa fa-envelope fa-fw"></i></span>
+            <input type="telephone" value="{{user.telephone}}" name="telephone" class="form-control"
+              placeholder="telephone">
+          </div>
+           <div class="input-group mb-1">
+            <span class="input-group-text"><i class="fa fa-envelope fa-fw"></i></span>
+            <input type="age" value="{{user.age}}" name="age" class="form-control"
+              placeholder="age">
+          </div>
           <div class="input-group mb-2">
             <span class="input-group-text"><i class="fa fa-lock fa-fw"></i></span>
             <input type="password" value="{{user.password}}" name="password"
               class="form-control {{#if errors.password}}is-invalid{{/if}}" placeholder="****">
             {{#if errors.password}}<div class="invalid-feedback">{{errors.password}}</div>{{/if}}
           </div>
-        
           <div class="d-grid">
             <button type="submit" class="btn btn-primary btn-lg" class="border border-primary" style="background-color: #26BB98">Create</button>
           </div>
