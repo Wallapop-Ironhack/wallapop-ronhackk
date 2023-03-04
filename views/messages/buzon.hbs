@@ -1,9 +1,9 @@
 <div class="mt-5 pt-5">
     <h1>buzon de {{currentUser.name}}</h1>
     <ul>
-        {{#each messages as |message|}}
+        {{#each users as |user|}}
         <li>
-            <a class="navbar-brand" href="/users/{{to.id}}/chat">Chat con {{message.to.name}}</a>
+            <a class="navbar-brand" href="/users/{{user.id}}/chat">Chat con {{user.name}}</a>
         </li>
         {{/each}}
     </ul>

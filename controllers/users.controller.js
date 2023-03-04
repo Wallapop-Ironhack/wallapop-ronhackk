@@ -60,7 +60,25 @@ module.exports.doLogin = (req, res, next) => {
     .catch(next);
 };
 
+module.exports.edit = (req, res, next) => {
+  User.findById(req.params.id)
+  .then((user) => {
+  res.render ('users/edit', {user})
+})
+ .catch(next);
+}
 
+module.exports.doEdit = (req, res, next) => {
+  const { password } = req.body;
+  if (!password) {
+    delete req.body.password;
+  }
+
+  const user = Object.assign(req.user, req.body);
+  user.save()
+    .then(user => res.redirect('/profile'))
+    .catch(next);
+}
 
 module.exports.logout = (req, res, next) => {
   req.session.destroy()

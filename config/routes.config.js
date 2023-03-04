@@ -22,6 +22,9 @@ router.post("/users", users.doCreate);
 router.get("/login", users.login);
 router.post("/login", users.doLogin);
 
+router.get("/users/edit", users.edit);
+router.post("/users/:id", users.doEdit);
+
 router.post ("/logout", users.logout)
 
 
