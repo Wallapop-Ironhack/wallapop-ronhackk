@@ -21,26 +21,20 @@
         data-bs-toggle="dropdown" class="navbar-text">
         {{#if currentUser}}
         You are: {{currentUser.name}}
-          <div class="col-lg-6 col-md-6 col-sm-6">
-      <a href="/users{{user.id}}/edit" class="btn btn-outline-success">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen-fill"
-          viewBox="0 0 16 16">
-          <path
-            d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001z" />
-        </svg>
-        Edit
-      </a>
-    </div>
+        <a href="/profile" class="btn btn-outline-success">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill"
+            viewBox="0 0 16 16">
+            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+          </svg>
+          Profile
+        </a>
         {{else}}
         Login/Sign up
         {{/if}}
       </a>
       <ul class="dropdown-menu mt-1">
-
         <li> <a class="btn btn-outline-success my-2 my-sm-0 rounded-pill" href="/users/new"> Sign up</a></li>
-
         <li><a class="btn btn-outline-success my-2 my-sm-0 rounded-pill" href="/login">Login</a></li>
-
         <li>
           <form class="form-inline" action="/logout" method="POST">
             <button class="btn btn-outline-success my-2 my-sm-0 rounded-pill" type="submit">Logout</button>

@@ -17,16 +17,14 @@ router.get("/category-search", common.search);
 router.get("/users/new", users.create);
 router.post("/users", users.doCreate);
 
-
+router.get("/profile", users.profile);
+router.get("/users/edit", users.edit);
+router.post("/users/:id", users.doEdit);
 
 router.get("/login", users.login);
 router.post("/login", users.doLogin);
 
-router.get("/users/edit", users.edit);
-router.post("/users/:id", users.doEdit);
-
 router.post ("/logout", users.logout)
-
 
 
 router.get("/products", products.list);
