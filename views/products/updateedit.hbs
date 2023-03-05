@@ -1,0 +1,56 @@
+<div class="row justify-content-center mt-5 pt-5">
+  <div class="col-12 col-md-4">
+    <h1 class="mb-3">Update</h1>
+    <div class="card">
+      <div class="card-body">
+        <form action="/products/{{product.id}}" method="POST" enctype="multipart/form-data">
+          <div class="input-group mb-3">
+            <label class="input-group-text" for="image"><i class="fa fa-picture-o"></i></label>
+            <input type="file" name="image" class="form-control" id="image">
+          </div>
+          <div class="input-group mb-1">
+            <span class="input-group-text"><i class="fa fa-comment fa-fw"></i></span>
+            <input value="{{product.title}}" name="title" class="form-control" type="text" placeholder="Title">
+          </div>
+          <div class="input-group mb-2">
+            <span class="input-group-text"><i class="fa fa-user fa-fw"></i></span>
+            <input value="{{product.user}}" name="user" class="form-control" type="text" placeholder="User name">
+          </div>
+          <div class="input-group mb-2">
+            <span class="input-group-text"><i class="fa fa-money fa-fw"></i></span>
+            <input value="{{product.price}}" name="price" class="form-control" type="text" placeholder="0.00€">
+          </div>
+          <div class="input-group mb-2">
+            <span class="input-group-text"><i class="fa fa-product-hunt fa-fw"></i></span>
+            <input value="{{product.description}}" name="description" class="form-control" type="text"
+              placeholder="Product description">
+          </div>
+          <div class="input-group mb-3">
+            <label class="input-group-text" for="address"><i class="fa fa-globe fa-fw"></i></label>
+            <input type="text" name="address"
+              class="form-control g-places-finder " id="address"
+              value="{{product.address}}">
+          </div>
+          <input type="hidden" name="lat" value="{{product.lat}}" />
+          <input type="hidden" name="lng" value="{{product.lng}}" />
+          <div class="input-group mb-2">
+            <span class="input-group-text"><i class="fa fa-hand-pointer-o fa-fw"></i></span>
+            <input value="{{product.category}}" name="category" class="form-control" list="datalistOptions" type="text"
+              id="Category" placeholder="Open this select menu">
+            <datalist id="datalistOptions">
+              <option value="electronic">
+              <option value="homeware">
+              <option value="music and books">
+              <option value="phones">
+              <option value="vehicles">
+            </datalist>
+          </div>
+          <div class="d-grid">
+            <button type="submit" class="btn btn-primary btn-lg" class="border border-primary"
+              style="background-color: #26BB98">Update</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
