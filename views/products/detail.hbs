@@ -4,7 +4,7 @@
   <div class="card card border-success">
     <div class="card-body ">
       <h1 class="card-title">Product Detail</h1>
-      <h2 class="card-subtitle mb 3">{{product.title}}</h2>
+      <h3 class="card-subtitle mb 3">{{product.title}}</h3>
       <div class="row">
         <div class="col-lg-5 col-md-5 col-sm-6">
           <div class="white-box text-center"> {{#if product.image}}
@@ -13,18 +13,22 @@
           </div>
         </div>
         <div class="col-lg-7 col-md-7 col-sm-6 ">
-          <h4 class="box-title mt-5">Product description</h4>
+          <h3 class="box-title">Product description</h3>
           <p>{{product.description}}</p>
-          <h5 class="box-title mt-5"><a href="/products?user={{product.user.id}}">
-              Check all products of this seller: {{product.user.name}}
-            </a></h5>
+          <a class="btn btn-outline-success" href="/products?user={{product.user.id}}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart"
+              viewBox="0 0 16 16">
+              <path
+                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+            </svg>
+            Check all products of this seller: {{product.user.name}}
+          </a>
           <h2 class="mt-5">
             {{product.price}}
           </h2>
           <button class="btn btn-success" data-toggle="tooltip" title="" data-original-title="Add to cart">
             <i class="fa fa-shopping-cart"></i>
           </button>
-
           <a href="/users/{{product.user.id}}/chat">
             <button class="btn btn-success">Chat with seller</button>
             <a href="/products" class="btn btn-outline-success">
