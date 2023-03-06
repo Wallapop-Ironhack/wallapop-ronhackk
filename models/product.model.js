@@ -7,6 +7,7 @@ const schemaProduct = new mongoose.Schema(
       ref: 'User',
       required: [true, "user is required"],
     },
+    
     image: { type: String },
 
     price: {
