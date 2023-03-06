@@ -3,34 +3,41 @@
     <h1 class="mb-3">Update</h1>
     <div class="card">
       <div class="card-body">
-      <form action="/products/{{product.id}}" method="POST">
-        <div class="mb-3" style="width: 500px">
-          <label for="image" class="form-label">Image</label>
-          <input value="{{product.image}}" name="image" class="form-control" type="text" id="Image">
-        </div>
-        <div class="mb-3" style="width: 500px">
-          <label for="title" class="form-label">Title</label>
-          <input value="{{product.title}}" name="title" class="form-control" type="text" id="Title">
-        </div>
-        <div class="mb-3" style="width: 500px">
-          <label for="user" class="form-label">User</label>
-          <input value="{{product.user}}" name="user" class="form-control" type="text" id="User">
-        </div>
-        <div class="mb-3" style="width: 500px">
-          <label for="price" class="form-label">Price</label>
-          <input value="{{product.price}}" name="price" class="form-control" type="text" id="Price">
-        </div>
-        <div class="mb-3" style="width: 500px">
-          <label for="description" class="form-label">Description</label>
-          <input value="{{product.description}}" name="description" class="form-control" type="text" id="description">
-        </div>
-        <div class="mb-3" style="width: 500px">
-          <label for="category" class="form-label">Category</label>
-          <input value="{{product.category}}" name="category" class="form-control" type="text" id="Category">
-        </div>
-        <button type="submit" class="btn btn-primary btn-lg" class="border border-primary"
-          style="background-color: #26BB98">Update</button>
-       </div>
+        <form action="/products/{{product.id}}" method="POST">
+
+          <div class="input-group mb-1">
+            <span class="input-group-text"><i class="fa fa-comment fa-fw"></i></span>
+            <input value="{{product.title}}" name="title" class="form-control" type="text" placeholder="Title">
+          </div>
+
+          <div class="input-group mb-2">
+            <span class="input-group-text"><i class="fa fa-money fa-fw"></i></span>
+            <input value="{{product.price}}" name="price" class="form-control" type="text" placeholder="0.00€">
+          </div>
+
+          <div class="input-group mb-2">
+            <span class="input-group-text"><i class="fa fa-product-hunt fa-fw"></i></span>
+            <input value="{{product.description}}" name="description" class="form-control" type="text"
+              placeholder="Product description">
+          </div>
+
+          <div class="input-group mb-2">
+            <span class="input-group-text"><i class="fa fa-hand-pointer-o fa-fw"></i></span>
+            <input value="{{product.category}}" name="category" class="form-control" list="datalistOptions" type="text"
+              id="Category" placeholder="Open this select menu">
+            <datalist id="datalistOptions">
+              <option value="electronic">
+              <option value="homeware">
+              <option value="music and books">
+              <option value="phones">
+              <option value="vehicles">
+            </datalist>
+          </div>
+          
+          <div class="d-grid">
+            <button type="submit" class="btn btn-primary btn-lg" class="border border-primary"
+              style="background-color: #26BB98">Update</button>
+          </div>
         </form>
       </div>
     </div>
